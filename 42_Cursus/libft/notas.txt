@@ -1,0 +1,5 @@
+Usos de las funciones actuales:
+-ft_isalpha: Comprueba si es un caracter Alfabetico
+-ft_isdigit: Comprueba si es un caracter Numerico
+-ft_isalnum: Comprueba si es un caracter Alfabetico o Numerico
+-ft_isascii: Comprueba si es un caracter ASCII

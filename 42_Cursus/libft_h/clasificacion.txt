@@ -1,0 +1,77 @@
+/* ========================================
+                  Libft_H
+   ======================================== */
+
+/* ---------- Estructura de Lista ---------- */
+typedef struct s_list
+{
+    void            *content;
+    struct s_list   *next;
+}                   t_list;
+
+/* ---------- Funciones de Caracteres y Cadenas ---------- */
+// Funciones de Clasificación de Caracteres
+int ft_isalpha(int c);				// Verifica si el carácter es alfabético.
+int ft_isdigit(int c);				// Verifica si el carácter es un dígito.
+int ft_isalnum(int c);				// Verifica si el carácter es alfanumérico.
+int ft_isascii(int c);				// Verifica si el carácter es un código ASCII válido.
+int ft_isprint(int c);				// Verifica si el carácter es imprimible.
+
+// Funciones de Operaciones en Cadenas
+size_t ft_strlen(const char *s);									// Devuelve la longitud de una cadena.
+size_t ft_strlcpy(char *dst, const char *src, size_t size);			// Copia una cadena a otra con límite.
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize);		// Concatena dos cadenas con límite.
+char *ft_strchr(const char *s, int c);								// Encuentra la primera aparición de un carácter en una cadena.
+char *ft_strrchr(const char *s, int c);								// Encuentra la última aparición de un carácter en una cadena.
+int ft_strncmp(const char *s1, const char *s2, size_t size);		// Compara los primeros n caracteres de dos cadenas.
+char *ft_strnstr(const char *big, const char *little, size_t len);	// Busca una subcadena en otra con límite.
+int ft_toupper(int c);												// Convierte un carácter a mayúscula.
+int ft_tolower(int c);												// Convierte un carácter a minúscula.
+
+// Funciones de Memoria
+void ft_bzero(void *s, size_t n);							// Establece los primeros n bytes de un área de memoria en cero.
+void *ft_memset(void *b, int c, size_t len);				// Llena un bloque de memoria con un valor específico.
+void *ft_memcpy(void *dst, const void *src, size_t n);		// Copia n bytes de una área de memoria a otra.
+void *ft_memmove(void *dst, const void *src, size_t len);	// Mueve n bytes de una área de memoria a otra.
+void *ft_memchr(const void *s, int c, size_t n);			// Busca la primera aparición de un carácter en un área de memoria.
+int ft_memcmp(const void *s1, const void *s2, size_t n);	// Compara los primeros n bytes de dos áreas de memoria.
+
+// Funciones de Conversión de Cadenas a Números
+int ft_atoi(const char *nptr);								// Convierte una cadena de caracteres a un entero.
+
+/* ---------- Funciones de Memoria Dinámica ---------- */
+// Asignación y Manipulación de Cadenas Dinámicas
+void *ft_calloc(size_t nmemb, size_t size);						// Asigna y inicializa un bloque de memoria para un arreglo.
+char *ft_strdup(const char *s);									// Duplica una cadena de caracteres.
+char *ft_substr(char const *s, unsigned int start, size_t len);	// Devuelve una subcadena de una cadena dada.
+char *ft_strjoin(char const *s1, char const *s2);				// Concatena dos cadenas de caracteres.
+char *ft_strtrim(char const *s1, char const *set);				// Elimina los caracteres especificados al principio y al final de una cadena.
+char **ft_split(char const *s, char c);							// Divide una cadena en subcadenas usando un delimitador.
+char *ft_itoa(int n);											// Convierte un entero a una cadena de caracteres.
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));	// Aplica una función a cada caracter de una cadena con su índice.
+
+/* ---------- Funciones de Manipulación de Listas ---------- */
+// Operaciones Básicas en Listas Enlazadas
+t_list *ft_lstnew(void *content);						// Crea un nuevo nodo de lista.
+void ft_lstadd_front(t_list **lst, t_list *new);		// Agrega un nodo al frente de la lista.
+int ft_lstsize(t_list *lst);							// Devuelve el número de nodos en la lista.
+t_list *ft_lstlast(t_list *lst);						// Devuelve un puntero al último nodo de la lista.
+void ft_lstadd_back(t_list **lst, t_list *new);			// Agrega un nodo al final de la lista.
+
+// Operaciones Avanzadas en Listas Enlazadas
+void ft_lstdelone(t_list *lst, void (*del)(void *));						// Elimina un solo nodo de la lista.
+void ft_lstclear(t_list **lst, void (*del)(void *)); 						// Elimina todos los nodos de la lista.
+void ft_lstiter(t_list *lst, void (*f)(void *));							// Aplica una función a cada elemento de la lista.
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));	// Crea una nueva lista aplicando una función a cada elemento.
+
+/* ---------- Printf (Función de Impresión con Formato:) ---------- */
+int ft_printf(const char *format, ...);					//Implementación básica de la función printf que maneja varios especificadores de formato.
+														//Uso: Permite imprimir texto con formato en la consola, similar a la función printf de la librería stdio.h.
+
+/* ---------- Get_Next_Line(Lectura de Líneas desde un fd) ---------- */
+char	*get_next_line(int fd);							//Lee líneas de un archivo descriptor de archivo (fd) utilizando un buffer.
+														//Uso: Facilita la lectura de líneas desde un archivo, gestionando la memoria de manera adecuada y devolviendo la próxima línea cada vez que se llama.
+
+/* ========================================
+                Fin del Archivo
+   ======================================== */
