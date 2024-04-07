@@ -6,13 +6,13 @@
 #    By: eleon-go@student.42malaga.co <eleon-go>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 16:59:59 by eleon-go          #+#    #+#              #
-#    Updated: 2023/09/26 14:59:10 by eleon-go@st      ###   ########.fr        #
+#    Updated: 2024/04/07 19:18:21 by eleon-go@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 INCLUDE = -I ./includes
 
-NAME	= libft.a
+NAME	= libft_h.a
 
 DIR_LIBFT = ./src/libft
 
