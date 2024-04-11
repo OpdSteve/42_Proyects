@@ -6,7 +6,7 @@
 #    By: eleon-go@student.42malaga.co <eleon-go>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 16:59:59 by eleon-go          #+#    #+#              #
-#    Updated: 2024/04/08 19:33:23 by eleon-go@st      ###   ########.fr        #
+#    Updated: 2024/04/11 21:12:27 by eleon-go@st      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,25 +81,21 @@ CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 
-ifdef DEBUG
-	CC += -g
-endif
-
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				ar -rcs $(NAME) $(OBJS)
-				@echo "La parte obligatoria se copilo correctamente✅"
+				@echo "> Las funciones del libft se copilaron correctamente✅"
 %.o: %.c
 	@$(CC) -c $(CFLAGS) $(INCLUDE) $< -o $@
 
 clean:
 				$(RM) $(OBJS)
-				@echo "Se borraron todos los .o correctamente✅"
+				@echo "> Se borraron todos los .o del libft correctamente✅"
 
 fclean:			clean
 				$(RM) $(NAME)
-				@echo "Se borraron todos los archivos .a correctamente✅"
+				@echo "> Se borraron todos los archivos .a del libft correctamente✅"
 
 re:				fclean all
 
